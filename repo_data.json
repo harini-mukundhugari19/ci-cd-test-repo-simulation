@@ -1,0 +1,5 @@
+{
+  "name": "ci-cd-test-repo-simulation",
+  "private": false,
+  "description": "A simulated repository for CI/CD root cause analysis testing"
+}
