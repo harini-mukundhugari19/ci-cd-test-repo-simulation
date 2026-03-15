@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 app.get('/health', (req, res) => {
   console.log('Health check requested');
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
+};
 
 // Main route with multiple dependency checks
 app.get('/', (req, res) => {
