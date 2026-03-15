@@ -27,3 +27,6 @@ jobs:
           npm start &
           sleep 5
           curl -f http://localhost:3000 || exit 1
+        env:
+          # This dummy value satisfies the app's startup validation check
+          DATABASE_URL: "postgres://localhost:5432/simulation_db"
