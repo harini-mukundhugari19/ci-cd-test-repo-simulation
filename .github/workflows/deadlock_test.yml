@@ -1,0 +1,21 @@
+name: Deadlock/Timeout Simulation
+
+on:
+  push:
+    branches:
+      - test-ambiguous-errors
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # A short timeout to ensure the job eventually fails in a reasonable time rather than 6 hours
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Run Deadlock Script
+        run: python deadlock.py
